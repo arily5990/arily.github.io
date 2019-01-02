@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>switch流程控制</title>
+    <title>检查是否为闰年</title>
     <style>
         body {
             width: 500px;
@@ -12,35 +12,32 @@
             border: 2px solid green;
         }
     </style>
+    <script language="javascript">
+        function isLeapYear(year) {
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        str = year + "是闰年";
+                    }else {
+                        str = year + "不是闰年！";
+                    }
+                }else {
+                    str = year + "是闰年";
+                }
+            }else {
+                str = year + "不是闰年！！"
+            }
+            alert(str)
+        }
+    </script>
 </head>
 
 <body>
-    <h1>switch流程控制</h1>
-    <script language="javascript">
-        /* 
-            1:春季  2:夏季
-            3:秋季  4:冬季 
-        */
-       season = prompt("请输入季节编号：（1-4）");
-
-       switch (season) {
-            case "1": msg = "春季";
-                break;
-
-            case "2": msg = "夏季";
-                break;
-
-            case "3": msg = "秋季";
-                break;
-            
-            case "4": msg = "冬季";
-                break;
-            default: msg = "请输入正确编号！！！！！";
-                
-                break;
-       }
-       document.write(msg);
-    </script>
+    <h1>检查是否为闰年</h1>
+    <form name="form1">
+        <input type="text" name="year" value="2019">
+        <input type="button" value="是否为闰年" onclick="isLeapYear(form1.year.value)">
+    </form>
 </body>
 
 </html>
