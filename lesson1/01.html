@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>比较运算符</title>
+    <title>猜数字游戏</title>
     <style>
         body{
             width:500px;
@@ -15,18 +15,37 @@
             border: 2px solid green;
         }
     </style>
+    <script>
+        n = Math.floor(Math.random() * 100);
+        function numGame() {
+            num = formNum.num.value;
+            str = "";
+            s = "你输入的数字";
+
+            if(num < 0 || num > 99) {
+                str = s + "请输入一个0~99之间的整数";
+            }else {
+                if (num > n) str = s + "太大了！！！";
+                if (num < n) str = s + "太小了！！！";
+                if (num == n) {
+                    str = "恭喜你猜对了！！！";
+                    alert(str);
+                }    
+            }
+            formNum.info.value = str;
+        }
+    </script>
+
 </head>
 <body>
-    <h1>比较运算符</h1>
-    <script>
-        var a = 10,
-        b = 5;
+    <h1>猜数字游戏</h1>
+    <h2>1.未改良版本</h2>
+    <p>请输入一个（0~99）之间的数字</p>
+    <form name="formNum">
+        <input type="text" size="3" name="num">
+        <input type="button" value="我猜" onclick="numGame()"><br>
+        信息：<input type="text" name="info" size="40">
+    </form>
 
-        document.write('a = ',a,',b = ',b,'<br>');
-        document.write('a == b = ',a==b,'<br>');
-        document.write('a >  b = ',a>b,'<br>');
-        document.write('a < b = ',a<b,'<br>');
-       document.write('a != b = ',a!=b,'<br>');
-    </script>
 </body>
 </html>
