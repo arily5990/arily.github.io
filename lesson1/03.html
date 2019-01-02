@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表达式的计算顺序</title>
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>表达式的计算顺序</h1>
+    <p>
+        a = 10,<br>
+        b = 5,<br>
+        c = 3
+    </p>
+    <script>
+        var a = 10,
+            b = 5,
+            c = 3;
+            
+            s = a + b * c;
+            document.write('a + b * c = ',s,'<br>');
+            s = (a + b) * c;
+            document.write('(a + b) * c = ',s,'<br>')
+            
+    </script>
+</body>
+
+</html>
