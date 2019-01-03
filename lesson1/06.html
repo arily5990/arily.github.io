@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>年份查生肖</title>
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            border: 2px solid green;
+        }
+    </style>
+    <script>
+        function GetBirthYear() {
+            var birthpet = "丑牛";
+            x = (1997 - document.frm.inyear.value) % 12;
+            
+            if ((x == 1) || (x == -11)) {
+                birthpet = "子鼠";
+            }else {
+                if (x == 0) {
+                    birthpet = "丑牛";
+                }else {
+                    if ((x == 11) || (x == -1)) {
+                        birthpet = "[yín]寅虎";
+                    }else {
+                        if ((x == 10) || (x == -2)) {
+                            birthpet = "[mǎo]卯兔";
+                        }else {
+                            if ((x == 9) || (x == -3)) {
+                                birthpet = "辰龙";
+                            }else {
+                                if ((x == 8) || (x == -4)) {
+                                    birthpet = "[sì]巳蛇";
+                                }else {
+                                    if ((x == 7 ) || (x == -5)) {
+                                        birthpet = "午马";
+                                    }else{
+                                        if ((x == 6) || (x == -6 )) {
+                                            birthpet = "未羊";
+                                        }else {
+                                            if ((x == 5) || (x == -7)) {
+                                                birthpet = "申猴";
+                                            }else {
+                                                if ((x == 4 ) || (x == -8)) {
+                                                    birthpet = "[yǒu]酉鸡";
+                                                }else {
+                                                    if ((x == 3) || (x == -9)) {
+                                                        birthpet = "[xū]戌狗";
+                                                    }else {
+                                                        if ((x == 2) || (x == -10)) {
+                                                            birthpet = "亥猪";
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+            document.frm.birth.value = birthpet;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>年份查生肖</h1>
+    <p>子（鼠）、丑（牛）、[yín]寅（虎）、[mǎo]卯（兔）</p>
+    <p>辰（龙）、[sì]巳（蛇）、午（马）、未（羊）</p>
+    <p>申（猴）、[yǒu]酉（鸡）、[xū]戌（狗）、亥（猪）</p>
+    <form name="frm">
+        <!-- [Step2]: 这里可以设置按钮对应的背景颜色 -->
+        <input type="text" value="1975" size="5" name="inyear">
+        <input type="button" value="属相" onclick="GetBirthYear('')">
+        <input type="text" size="8" name="birth" value="[mǎo]卯兔">
+    </form>
+</body>
+
+</html>
