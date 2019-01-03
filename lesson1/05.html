@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮显示背景色</title>
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            border: 2px solid green;
+        }
+    </style>
+    <script>
+        function ButtonColor(bgc) {
+            document.bgColor = bgc;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>按钮显示背景色</h1>
+    <form>
+    <!-- [Step2]: 这里可以设置按钮对应的背景颜色 -->
+    <input type="button" value="粉红色" onclick="ButtonColor('pink')">
+    <input type="button" value="橄榄绿" onclick="ButtonColor('olive')">
+    <input type="button" value="黄褐色" onclick="ButtonColor('khaki')">
+    </form>
+</body>
+
+</html>
