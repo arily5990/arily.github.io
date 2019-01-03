@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>单击按钮时调用函数</title>
+    <title>背景图形变换</title>
     <style>
         body {
             width: 500px;
@@ -17,16 +16,21 @@
         }
     </style>
     <script>
-        function fun() {
-            alert("这是单击后的执行函数")
-        }
-    </script>
+        image_directory = "";
+        clear = new Image();  clear.src = image_directory + "";
+        pic1 = new Image();  pic1.src = image_directory + "./img/snowflake.gif";
+        pic2 = new Image();  pic2.src = image_directory + "./img/02.jpg";
+        pic3 = new Image();  pic3.src = image_directory + "./img/03.jpg";
+        function imagechange(imgName) {
+            document.body.background = eval(imgName + ".src");
+            }
+    </script>   
 </head>
-
 <body>
-    <h1>单击按钮时调用函数</h1>
-    <input type="button" value="单击我" onclick="fun()">
-
+    <h1>背景图形变换</h1>
+    <a href="#" onMouseOver="imagechange('pic1');" onMouseOut="imagechange('clear');"><img src="./img/snowflake.gif" width=80 height=60></a> 
+    <a href="#" onMouseOver="imagechange('pic2');" onMouseOut="imagechange('clear');"><img src="./img/02.jpg" width="80" height="60"></a> 
+    <a href="#" onMouseOver="imagechange('pic3');" onMouseOut="imagechange('clear');"><img src="./img/03.jpg" width="80" height="60"></a> 
 </body>
 
 </html>
